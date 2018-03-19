@@ -1,9 +1,475 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>My portfolio</title>
-</head>
-<body>
-	hello word!!
-</body>
+
+<!--use(xlink:href="/img/sprite/sprite.svg#" + name)--><!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" media="all" href="/css/main_global.css"/>
+  </head>
+  <body>
+    <div id="SVG_container"></div>
+    <header class="hover pp-viewing-page1 wwww">
+      <div class="minimized">
+        <div data-timer="500" class="fixedBlock startingAnimation moveDown fade triggered">
+          <div class="logo"></div>
+          <nav class="menu"><a href="#cms" style="text-decoration: none;" class="scroll-link">CRM-СИСТЕМА</a><a href="#advantages" style="text-decoration: none;" class="scroll-link">ПРЕИМУЩЕСТВА</a><a href="#functional" style="text-decoration: none;" class="scroll-link">ФУНКЦИОНАЛ</a><a href="#price_and_rate" style="text-decoration: none;" class="scroll-link">ТАРИФЫ</a><a href="#certificate" style="text-decoration: none;" class="scroll-link">СЕРТИФИКАТЫ</a>
+            <!--div(class="contacts visible-xs")
+            div
+            	a(href="tel:+79115340764" rel="nofollow" style="pointer-events: all;") +7 911 534-07-64
+            div
+            	a(class="link" data-toggle="modal" href="#myModalCall" rel="nofollow" style="pointer-events: all;")
+            -->
+          </nav>
+          <div id="navButton" class="navButton">
+            <div class="inner">
+              <div class="bar b1"></div>
+              <div class="bar b2"></div>
+              <div class="bar b3"></div>
+            </div>
+          </div>
+          <div class="contacts">
+            <div><a href="tel:+79115340764" rel="nofollow">+7 911 534-07-64</a></div>
+            <div><a data-toggle="modal" href="#myModalCall" rel="nofollow" class="link">связаться с нами</a></div>
+          </div>
+        </div>
+      </div>
+      <!--div.menus_and_contacts
+      div.logo
+      	img(src="img/logo.png")
+      a.gam(id="cll")
+      div(id="menu").menu
+      	ul
+      		li
+      			a(href="#cms") CRM-СИСТЕМА
+      		li
+      			a(href="#advantages") ПРЕИМУЩЕСТВА
+      		li
+      			a(href="#functional") ФУНКЦИОНАЛ
+      		li
+      			a(href="#price_and_rate") ТАРИФЫ
+      		li
+      			a(href="#certificate") СЕРТИФИКАТЫ
+      div.contacts
+      	div.contacts-number +7 8202 74-22-90
+      	div.contacts-link 
+      		a связаться с нами
+      -->
+      <div class="wrap-header">
+        <div class="header-content">
+          <div class="logo"><img src="img/logo1.png"/></div>
+          <div class="title">Хотите продавать больше?</div>
+          <div class="description"><span>amoCRM — это полный набор инструментов, который раскроет потнциал Вашего отдела продаж и повысит его эффективность</span></div>
+          <div class="button"><span> <a href="#openModal">Попробуйте бесплатно</a>
+              <div id="openModal" class="modalDialog">
+                <div>
+                  <hr class="modal-line"/><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                  <div class="modal-text">
+                    <p class="modal-text-title">Закажите бесплатный тестовый аккаунт в AmoCRM<br></p>
+                    <p class="modal-text-description">на 14 дней с настройкой системы под Ваш бизнес и поддержкой консультанта!</p>
+                  </div>
+                  <form class="form1 js-send-contact-footer">
+                    <input type="hidden" value="ok" name="replay"/>
+                    <input type="hidden" value="Free Account" name="theme"/>
+                    <input type="text" placeholder="Имя" name="name" class="form1-1"/>
+                    <input type="email" placeholder="Email или телефон" name="contact" class="form1-1"/>
+                    <textarea type="text" placeholder="Коментарий" name="text" class="form1-2"></textarea>
+                    <button type="submit" class="form1-button">
+                      <div>Заказать</div>
+                    </button>
+                  </form>
+                </div>
+              </div></span></div>
+        </div>
+      </div>
+    </header>
+    <!--section.www(data-id="test") sssss-->
+    <!--.title.js-title-->
+    <!--	h1.seo-h1 Lorem ipsum.-->
+    <!--.js--->
+    <!--+icon(1)-->
+    <!--+icon(10)-->
+    <!--+icon('wb-google+')-->
+    <div id="cms" class="cms">
+      <div class="wrap-cms">
+        <div class="cms-content">
+          <div class="cms-content-title">Что такое CRM-система</div>
+          <hr class="cms-content-line">
+          <div class="cms-content-title2">CRM-система</div>
+          <div class="cms-content-description"> <span>система управления взаимоотношениями с клиентами</span></div>
+          <div class="cms-content-description2">Программное обеспечение, предназначенное для автоматизации стратегий взаимодействия с заказчиками, в частности для повышения уровня продаж, оптимизации маркетинга и улучшения обслуживания клиентов путём сохранения информации о клиентах и истории взаимоотношений с ними, установления и улучшения бизнес-процессов и последующего анализа результатов.</div>
+        </div>
+      </div>
+    </div>
+    <div id="advantages" class="advantages">
+      <div class="wrap-advantages">
+        <div class="advantages-content-left">
+          <div class="left-title"><span>Преимущества</span><img src="img/logo2.png"></div>
+          <hr class="left-line">
+          <ul class="list1">
+            <li> <span>Специализация на универсальных задачах отделов продаж:</span></li>
+            <ul class="list2">
+              <li><span>автоматизация процесса лидогенерации и учёта лидов;</span></li>
+              <li><span>универсальная воронка продаж;</span></li>
+              <li><span>управление менеджерами по продажам;</span></li>
+              <li><span>единый источник получения всех статистических данных по продажам;</span></li>
+              <li><span>гибкий API: возможность любых доработок системы</span></li>
+            </ul>
+            <li> <span>Простота внедрения и интуитивно понятный интерфейс</span></li>
+            <li> <span>Лёгкая интеграция с большинством популярных сервисов</span></li>
+          </ul>
+        </div>
+        <div class="advantages-content-right">
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div id="functional" class="functional">
+      <div class="wrap-functional">
+        <div class="fun-content">
+          <div class="functional-title"><span>Функционал</span><img src="img/logo2.png"></div>
+          <hr class="functional-line">
+        </div>
+      </div>
+    </div>
+    <div class="function2">
+      <!--div.bg-left-->
+      <!--div.bg-right-->
+      <div class="wrap-functional">
+        <div class="slider">
+          <div class="next">
+            <svg class="icon icon-10 ">
+              <use xlink:href="#10"></use>
+            </svg>
+          </div>
+          <div class="prev">
+            <svg class="icon icon-1 ">
+              <use xlink:href="#1"></use>
+            </svg>
+          </div>
+          <div class="slides">
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Рабочий стол</div>
+                  <div class="functional-content-description">Данная вкладка, по сути, является окном самой актуальной информации в Вашей компании. Здесь отображаются самые последние контакты, сделки, события и задачи, добавленные в CRM, а также их текущий статус: первый контакт, переговоры, на согласовании и др. Кроме того существует возможность поиска и сортировки событий по любому периоду времени и другим критериям.<br><br>Рабочий стол позволяет также самостоятельно добавить новую задачу или контакт и посмотреть текущее состояние воронки продаж.</div>
+                </div>
+                <div class="right-content"><img src="img/1.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Настройка прав пользователей</div>
+                  <div class="functional-content-description">Настраивайте права пользователей аккаунта (ваших коллег и сотрудников) как индивидуально (на каждого сотрудника), так и на группы (отделы) в любых сочетаниях режимов видимости и редактирования.Если Ваш сотрудник уволился, Вы можете легко удалить его из системы.При удалении, amoCRM автоматически предложит Вам перенести всю информацию на другого менеджера.</div>
+                </div>
+                <div class="right-content"><img src="img/2.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Учет лидов в amoCRM</div>
+                  <div class="functional-content-description">Настраивайте автоматический учёт входящих лидов по всем каналам:</div>
+                  <ul class="list2">
+                    <li><span>автоматизация процесса лидогенерации и учёта лидов;</span></li>
+                    <li><span>универсальная воронка продаж;</span></li>
+                    <li><span>управление менеджерами по продажам;</span></li>
+                  </ul>
+                </div>
+                <div class="right-content"><img src="img/3.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Поля в сделках и контактах</div>
+                  <div class="functional-content-description">К основным стандартным полям Вы можете добавить любые дополнительные поля с информацией, важной для Вашего бизнеса</div>
+                </div>
+                <div class="right-content"><img src="img/4.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Воронка продаж</div>
+                  <div class="functional-content-description">Это последовательность этапов, которые будет проходить потенциальный клиент прежде, чем он у нас купит или откажется от покупки.Воронка продаж:</div>
+                  <ul class="list2">
+                    <li><span>упрощает процесс продажи: на каждом этапе менеджер продаёт только следующий этап воронки, а не весь продукт / услугу;</span></li>
+                    <li><span>помогает расставлять приоритеты: больше ресурсов на правую часть воронки;</span></li>
+                    <li><span>точные данные для контроля и прогноза результата (видим на каком этапе находится каждый клиент)</span></li>
+                    <li><span>позволяет определять события (тригеры), по которым клиент переходит из одного этапа в другой и устанавливать оптимальное время нахождения клиента на каждом этапе воронки.</span></li>
+                  </ul>
+                </div>
+                <div class="right-content"><img src="img/5.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Задачи и напоминания</div>
+                  <div class="functional-content-description">AmoCRM помогает следить за тем, чтобы по каждой сделке было запланировано следующее действие и напоминает, если задача была просрочена или никаких действий по клиенту не запланировано.</div>
+                </div>
+                <div class="right-content"><img src="img/6.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Аналитика</div>
+                  <div class="functional-content-description">В amoCRM предусмотрены диаграммы распределения всех сделок по статусам воронки продаж,менеджерам или другом удобном для вас разрезе. Вы можете увидеть все значимые данные на одном экране или углубиться в анализ ситуации по конкретному менеджеру или сделке.</div>
+                </div>
+                <div class="right-content"><img src="img/7.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Digital - интеграции</div>
+                  <div class="functional-content-description">Автоматически настраивайте рекламные кампании в соцсетях клиентов, находящихся на определённом этапе вашей воронки продаж. При переходе клиента на следующий этап воронки — кампания отключится также автоматически. </div>
+                </div>
+                <div class="right-content"><img src="img/8.jpg"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="functional-content">
+                <div class="left-content"> 
+                  <div class="functional-content-title">Интеграции с другими популярными сервисами</div>
+                  <div class="functional-content-description">AmoCRM обладает уникальным и очень развитым интерфейсом разработчика, что позволяет не только настраивать ее под свои потребности, но и создавать всевозможные интеграции с другими системами.При этом, сотни самых разных готовых расширений уже доступны для кастомизации CRM под Ваши нужды даже без навыков программирования</div>
+                </div>
+                <div class="right-content"><img src="img/9.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="price_and_rate" class="price_and_rate">
+      <div class="price">
+        <div class="price-title">Цены и тарифы </div>
+        <hr class="price-line1">
+        <div class="price-item js-focus-item">
+          <div class="price-base"><span class="price-text1">Базовый</span><span class="price-text2">499</span><span class="price-text3">руб/мес.</span><span class="price-text4">В месяц за пользователя</span></div>
+          <hr class="price-line2">
+          <div class="price-description">Для больших компаний с небольшим отделом продаж</div>
+          <div class="price-like-content">
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Создание сделок и контактов</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Интеграция с сайтом и Google Universal</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Поиск и объединение дубликатов</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Настройка этапов продаж и работа с воронкой</span></div>
+          </div>
+          <div class="price-button"> <a href="#openModal1">Заказать</a>
+            <div id="openModal1" class="modalDialog">
+              <div>
+                <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                <div class="modal-text">
+                  <p class="modal-text-title">Тариф Базовый<br></p>
+                </div>
+                <form class="form1 js-send-contact-footer">
+                  <input type="hidden" value="ok" name="replay">
+                  <input type="hidden" value="Base Account" name="theme">
+                  <input type="text" placeholder="Имя" name="name" class="form1-1">
+                  <input type="email" placeholder="Email" name="contact" class="form1-1">
+                  <textarea type="text" placeholder="Телефон" name="phone" class="form1-2"></textarea>
+                  <button type="submit" class="form1-button">
+                    <div>Заказать</div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="price-item js-focus-item">
+          <div class="price-base"><span class="price-text1">Расширенный</span><span class="price-text2">799</span><span class="price-text3">руб/мес.</span><span class="price-text4">В месяц за пользователя</span></div>
+          <hr class="price-line2">
+          <div class="price-description">Для тех, кто хочет оптимизировать конверсию</div>
+          <div class="price-like-content">
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Бизнес процессы с автоматическим созданием задач</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Обязательность заполнения полей</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">KPI и план продаж для менеджеров</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Возможность доработки рабочего стола</span></div>
+          </div>
+          <div class="price-button"> <a href="#openModal2">Заказать</a>
+            <div id="openModal2" class="modalDialog">
+              <div>
+                <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                <div class="modal-text">
+                  <p class="modal-text-title">Тариф Расширенный<br></p>
+                </div>
+                <form class="form1 js-send-contact-footer">
+                  <input type="hidden" value="ok" name="replay">
+                  <input type="hidden" value="Extended Account" name="theme">
+                  <input type="text" placeholder="Имя" name="name" class="form1-1">
+                  <input type="email" placeholder="Email" name="contact" class="form1-1">
+                  <textarea type="text" placeholder="Телефон" name="phone" class="form1-2"></textarea>
+                  <button type="submit" class="form1-button">
+                    <div>Заказать</div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="price-item js-focus-item">
+          <div class="price-base"><span class="price-text1">Профессиональный</span><span class="price-text2">1'499</span><span class="price-text3">руб/мес.</span><span class="price-text4">В месяц за пользователя</span></div>
+          <hr class="price-line2">
+          <div class="price-description">Для тех, кто занимается обработкой большого количества лидов</div>
+          <div class="price-like-content">
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text">Скоринг лидов</span></div>
+            <div class="price-like-item"><img src="img/like.png"><span class="item-text w180">Периодический Backup данных с отправкой архива на почту </span></div>
+          </div>
+          <div class="price-button"> <a href="#openModal3">Заказать</a>
+            <div id="openModal3" class="modalDialog">
+              <div>
+                <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                <div class="modal-text">
+                  <p class="modal-text-title">Тариф Профессиональный<br></p>
+                </div>
+                <form class="form1 js-send-contact-footer">
+                  <input type="hidden" value="ok" name="replay">
+                  <input type="hidden" value="Professional Account" name="theme">
+                  <input type="text" placeholder="Имя" name="name" class="form1-1">
+                  <input type="email" placeholder="Email" name="contact" class="form1-1">
+                  <textarea type="text" placeholder="Телефон" name="phone" class="form1-2"></textarea>
+                  <button type="submit" class="form1-button">
+                    <div>Заказать</div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rate">
+        <div class="rate-content">
+          <div class="rate-content-item">
+            <div class="rate-content-item-title">Пакет Микро-Бизнес</div>
+            <div class="rate-content-item-description">Для тех, кто только открыл свой бизнес и начинает привлекать своих первых клиентов</div>
+            <div class="rate-content-item-price"><span class="content-item-price-text1">4'990</span><span class="content-item-price-text2">руб/мес.</span><span class="content-item-price-text3">за 2 пользователей</span></div>
+            <div class="rate-content-item-button"><a href="#openModal4">Заказать</a>
+              <div id="openModal4" class="modalDialog">
+                <div>
+                  <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                  <div class="modal-text">
+                    <p class="modal-text-title">Пакет Микро-Бизнес<br></p>
+                  </div>
+                  <form class="form1 js-send-contact-footer">
+                    <input type="hidden" value="ok" name="replay">
+                    <input type="hidden" value="Micro Business Package" name="theme">
+                    <input type="text" placeholder="Имя" name="name" class="form1-1">
+                    <input type="email" placeholder="Email" name="contact" class="form1-1">
+                    <textarea type="text" placeholder="Телефон" name="phone" class="form1-2"></textarea>
+                    <button type="submit" class="form1-button">
+                      <div>Заказать</div>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <hr class="rate-content-item-line">
+          </div>
+          <div class="rate-content-item">
+            <div class="rate-content-item-title">Пакет Старт-ап</div>
+            <div class="rate-content-item-description">Для молодого бизнеса, где все вокруг друзья и не нужен контроль сотрудников</div>
+            <div class="rate-content-item-price"><span class="content-item-price-text1">14'990</span><span class="content-item-price-text2">руб/мес.</span><span class="content-item-price-text3">за 5 пользователей</span></div>
+            <div class="rate-content-item-button"><a href="#openModal5">Заказать</a>
+              <div id="openModal5" class="modalDialog">
+                <div>
+                  <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                  <div class="modal-text">
+                    <p class="modal-text-title">Пакет Старт-ап<br></p>
+                  </div>
+                  <form class="form1 js-send-contact-footer">
+                    <input type="hidden" value="ok" name="replay">
+                    <input type="hidden" value="Start-up package" name="theme">
+                    <input type="text" placeholder="Имя" name="name" class="form1-1">
+                    <input type="email" placeholder="Email" name="contact" class="form1-1">
+                    <textarea type="text" placeholder="Телефон" name="phone" class="form1-2"></textarea>
+                    <button type="submit" class="form1-button">
+                      <div>Заказать</div>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="certificate" class="certificate">
+      <div class="certificate-content">
+        <div class="certificate-content-left">
+          <div class="certificate-content-left-title">Мы являемся сертифицированным партнером <img src="img/logo1.png"></div>
+          <div class="certificate-content-left-title2">Закажите бесплатный тестовый аккаунт в AmoCRM</div>
+          <div class="certificate-content-left-description">на 14 дней с настройкой системы под Ваш бизнес и поддержкой консультанта! </div>
+          <div class="certificate-content-left-button"><a href="#openModal">Попробуйте бесплатно
+              <div id="openModal" class="modalDialog">
+                <div>
+                  <hr class="modal-line"><a href="#index.html" title="Закрыть" id="aaa" class="close">X</a>
+                  <div class="modal-text">
+                    <p class="modal-text-title">Закажите бесплатный тестовый аккаунт в AmoCRM<br></p>
+                    <p class="modal-text-description">на 14 дней с настройкой системы под Ваш бизнес и поддержкой консультанта!</p>
+                  </div>
+                  <form class="form1 js-send-contact-footer">
+                    <input type="hidden" value="ok" name="replay">
+                    <input type="hidden" value="Free Account" name="theme">
+                    <input type="text" placeholder="Имя" name="name" class="form1-1">
+                    <input type="email" placeholder="Email или телефон" name="contact" class="form1-1">
+                    <textarea type="text" placeholder="Коментарий" name="text" class="form1-2"></textarea>
+                    <button type="submit" class="form1-button">
+                      <div>Заказать</div>
+                    </button>
+                  </form>
+                </div>
+              </div></a></div>
+        </div>
+        <div class="certificate-content-right"><img src="img/cert.png"></div>
+      </div>
+      <svg class="icon icon-3 ">
+        <use xlink:href="#3"></use>
+      </svg>
+    </div>
+    <div class="contact_us">
+      <div class="contact_us-content-left"><span class="contact_us-content-left-title">Напишите нам</span>
+        <form class="contact_us-content-left-form js-send-contact-footer">
+          <input type="hidden" value="ok" name="replay">
+          <input type="hidden" value="form footer" name="theme">
+          <div>
+            <input type="text" placeholder="Имя" name="name" class="contact_us-content-left-form-name">
+            <input type="email" placeholder="Email или телефон" name="contact" class="contact_us-content-left-form-emal">
+          </div>
+          <textarea type="text" placeholder="Коментарий" name="text" class="contact_us-content-left-form-comment"></textarea>
+          <button type="submit" class="contact_us-content-left-form-button">
+            <div>Отправить</div>
+          </button>
+        </form>
+      </div>
+      <div class="contact_us-content-right">
+        <div class="contact_us-content-right-title">Мы в социальных сетях</div>
+        <div class="contact_us-content-right-soc">
+          <div><a href="https://vk.com/webest_m" class="ic-1">
+              <svg class="icon icon-wb-vk ">
+                <use xlink:href="#wb-vk"></use>
+              </svg></a></div>
+          <div><a href="https://www.facebook.com/webestm" class="ic-2">
+              <svg class="icon icon-wb-facebook ">
+                <use xlink:href="#wb-facebook"></use>
+              </svg></a></div>
+          <div><a href="https://twitter.com/webest_media" class="ic-3"><i class="fa fa-twitter fa-3 icon-twitter" aria-hidden="true"></i></a></div>
+          <div><a href="#" class="ic-4"><i class="fa fa-youtube-play icon-youtube" aria-hidden="true"></i></a></div>
+        </div>
+        <div class="contact_us-content-right-title2">Контакты</div>
+        <div class="contact_us-content-right-number">+7 (8202) 74-22-90</div>
+        <div class="contact_us-content-right-email">E-mail: <a href="#" >info@wbest.ru</a></div>
+        <div class="contact_us-content-right-address">Адрес: г. Череповец, ул. Годовикова, 21</div>
+        <div class="contact_us-content-right-requisites">ООО "Вэбест" / <a href="#" >Скачать реквизиты</a>  </div>
+      </div>
+    </div>
+    <footer> </footer>
+    <div class="modal"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script> 
+    <script src="js/all.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
