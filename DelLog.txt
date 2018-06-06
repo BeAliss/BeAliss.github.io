@@ -1,0 +1,2 @@
+delete from test2
+where CONVERT(DATETIME, aTime)<dateadd(mm,-1,getdate())
