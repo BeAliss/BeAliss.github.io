@@ -1,0 +1,14 @@
+SELECT [id]
+      ,[name]
+      ,[account]
+      ,[department]
+  FROM [SSM-DB-APP01.Severstal.SEVERSTALGROUP.COM].[personal].[dbo].[ldap_users]
+  WHERE id=72
+GO
+
+
+SELECT * FROM OPENQUERY([SSM-DB-APP01.Severstal.SEVERSTALGROUP.COM], 'SELECT [id]
+      ,[name]
+      ,[account]
+      ,[department]
+  FROM [personal].[dbo].[ldap_users] WHERE id=72')
