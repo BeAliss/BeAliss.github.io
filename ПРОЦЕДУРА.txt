@@ -1,0 +1,61 @@
+ UPDATE [dbo].[Delay]
+SET [dbo].[Delay].[StartDelay]=
+CASE
+WHEN (dateadd(mi,-35,getdate())>[ModuleDate] and [ModuleState]=0) THEN [dbo].[StatesReal].[ModuleDate]
+END,
+    [dbo].[Delay].[StopDelay]=
+CASE
+WHEN ([dbo].[Delay].[StartDelay]!=NULL and [ModuleState]=1) THEN [dbo].[StatesReal].[ModuleDate]
+END,
+    [dbo].[Delay].[VerificationDate]=getdate()
+FROM [MachinesStates].[dbo].[Delay]
+  INNER JOIN[MachinesStates].[dbo].StatesReal
+ON [dbo].[Delay].IDMachine = [dbo].[StatesReal].IDMachine
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_AddDelay] 
+	
+AS
+BEGIN
+	INSERT INTO [dbo].[Delay] 
+		SELECT [dbo].[StatesReal].IDMachine, 
+		CASE
+		when (dateadd(mi,-35,getdate())>[ModuleDate] and [ModuleState]=0) then [dbo].[StatesReal].[ModuleDate]
+		END,
+		CASE
+		when ([dbo].[Delay].IDMachine=[dbo].[StatesReal].IDMachine AND [dbo].[Delay].StartDelay!=[dbo].[StatesReal].ModuleDate) then [dbo].[StatesReal].[ModuleDate]
+		ELSE NULL
+		END, 
+		1
+		FROM [dbo].[StatesReal],[dbo].[Delay]
+		--WHERE dateadd(mi,-35,getdate())>[ModuleDate] and [ModuleState]=0;
+
+
+		--IF([dbo].[Delay].IDMachine=[dbo].[StatesReal].IDMachine AND [dbo].[Delay].StartDelay!=[dbo].[StatesReal].ModuleDate)
+		--[dbo].[Delay].[StopDelay]=[StatesReal].[ModuleDate];
+
+
+	--SELECT *
+	--FROM Authors INNER JOIN Books
+	--ON Authors.AuthorID = Books.BookID
+	--INSERT [dbo].[Delay] 
+   -- VALUES (1,1 , NULL, 1) 
+	--WHERE dateadd(mi,-35,getdate())>[ModuleDate] and [ModuleState]=0
+END
+GO
