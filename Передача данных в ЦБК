@@ -1,3 +1,15 @@
+
+--контроль работоспособности если procedure Check_Link; true то дальше
+ SELECT
+CASE
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=0) THEN --(ЗАПУСТИТЬ STOP_INS())
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=1) THEN --(ЗАПУСТИТЬ STOP_UPD())
+WHEN ([MachinesStates].[dbo].[Delay].[StopDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=1) THEN --(ЗАПУСТИТЬ STOP_UPD())
+END
+FROM [MachinesStates].[dbo].[Delay]
+
+
+-----------------------------------------------------------------------------
 SELECT [id]
       ,[name]
       ,[account]
