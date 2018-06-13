@@ -12,3 +12,7 @@ SELECT * FROM OPENQUERY([SSM-DB-APP01.Severstal.SEVERSTALGROUP.COM], 'SELECT [id
       ,[account]
       ,[department]
   FROM [personal].[dbo].[ldap_users] WHERE id=72')
+  
+  
+  
+[CDB10]..[DIAG].[TOAD_PLAN_TABLE]
