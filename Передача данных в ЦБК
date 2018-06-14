@@ -1,4 +1,27 @@
+код процедуры, без теста работоспособности
+---------------------------------------------------------- 
+BEGIN
 
+SELECT * FROM OPENQUERY(CDB10,'begin exec PCK_SSMTM_COLLECT.Check_Link; end');
+SELECT
+CASE
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=0) THEN (select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.STOP_INS([MachinesStates].[dbo].[Delay].[UnitCode],[MachinesStates].[dbo].[Delay].[StartDelay],NULL,NULL,NULL,NULL,[MachinesStates].[dbo].[Delay].[IDDelay],[MachinesStates].[dbo].[Delay].[StopDelay]); end'))
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=1) THEN (select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.STOP_UPD([MachinesStates].[dbo].[Delay].[UnitCode],[MachinesStates].[dbo].[Delay].[IDDelay],NULL,NULL,NULL,[MachinesStates].[dbo].[Delay].[StopDelay]); end'))
+--WHEN ([MachinesStates].[dbo].[Delay].[StopDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=1) THEN  (select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.STOP_UPD(); end'))--параметры
+END
+FROM [MachinesStates].[dbo].[Delay];
+
+UPDATE [MachinesStates].[dbo].[Delay]
+SET [MachinesStates].[dbo].[Delay].[StatusDelay]=
+CASE
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL) THEN 1 ELSE 0
+END
+--select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.Check_Link; end');
+
+END;
+
+
+--------------------------------------------------------------------------------------------------
 --контроль работоспособности если procedure Check_Link; true то дальше
  SELECT
 CASE
