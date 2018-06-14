@@ -1,5 +1,16 @@
 код процедуры, без теста работоспособности
 ---------------------------------------------------------- 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Гришкин Д.Е.
+-- Create date: 14.06.2018
+-- Description:	передача данных о простоях в ЦБД;
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_DelayToCDB] 
+AS
 BEGIN
 
 SELECT * FROM OPENQUERY(CDB10,'begin exec PCK_SSMTM_COLLECT.Check_Link; end');
