@@ -28,3 +28,6 @@ SELECT * FROM OPENQUERY([SSM-DB-APP01.Severstal.SEVERSTALGROUP.COM], 'SELECT [id
   
   
 [CDB10]..[DIAG].[TOAD_PLAN_TABLE]
+
+
+ select * from openquery(CDB10,'begin exec PCK_SSMTM_COLLECT.Check_Link; end'); 
