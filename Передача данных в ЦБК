@@ -1,5 +1,8 @@
 код процедуры, без теста работоспособности
 ---------------------------------------------------------- 
+USE [MachinesStates]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_DelayToCDB]    Script Date: 18.06.2018 11:27:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9,7 +12,7 @@ GO
 -- Create date: 18.06.2018
 -- Description:	передача данных о простоях в ЦБД;
 -- =============================================
-CREATE PROCEDURE [dbo].[sp_DelayToCDB] 
+ALTER PROCEDURE [dbo].[sp_DelayToCDB] 
 AS
 BEGIN
 declare @number int =1;
@@ -23,14 +26,17 @@ while @number<28
 	declare @IDDelay int =(select [MachinesStates].[dbo].[Delay].[IDDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number);
 	if(
 		(select [MachinesStates].[dbo].[Delay].[StatusDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)=0 and --первое условие
-		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number) IS NOT NULL --второе условие
+		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)IS NOT NULL --второе условие
 		) Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_INS('+@UnitCode+','+@StartDelay+',NULL,NULL,NULL,NULL,'+@IDDelay+','+@StopDelay+'); commit; end;') AT CDB10 
+		
 	else
 	if(
 		(select [MachinesStates].[dbo].[Delay].[StatusDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)=1 and --первое условие
-		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number) IS NOT NULL --второе условие
-		) Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_INS('+@UnitCode+','+@IDDelay+',NULL,NULL,NULL,'+@StopDelay+'); commit; end;') AT CDB10
+		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)IS NOT NULL --второе условие
+		) if(@StopDelay IS NULL)Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_UPD('+@UnitCode+','+@IDDelay+',NULL,NULL,NULL,NULL); commit; end;') AT CDB10
+		 else Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_UPD('+@UnitCode+','+@IDDelay+',NULL,NULL,NULL,'+@StopDelay+'); commit; end;') AT CDB10
 	set @number=@number+1;
+	
 	end; 
 
 /*if(
@@ -51,7 +57,7 @@ FROM [MachinesStates].[dbo].[Delay];
 UPDATE [MachinesStates].[dbo].[Delay]
 SET [MachinesStates].[dbo].[Delay].[StatusDelay]=
 CASE
-WHEN ([MachinesStates].[dbo].[Delay].[StartDelay] IS NOT NULL) THEN 1 ELSE 0
+WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]IS NOT NULL) THEN 1 ELSE 0
 END
 
 
