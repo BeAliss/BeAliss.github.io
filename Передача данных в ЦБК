@@ -6,14 +6,39 @@ SET QUOTED_IDENTIFIER ON
 GO
 -- =============================================
 -- Author:		Гришкин Д.Е.
--- Create date: 14.06.2018
+-- Create date: 18.06.2018
 -- Description:	передача данных о простоях в ЦБД;
 -- =============================================
 CREATE PROCEDURE [dbo].[sp_DelayToCDB] 
 AS
 BEGIN
+declare @number int =1;
+--SELECT * FROM OPENQUERY(CDB10,'begin exec PCK_SSMTM_COLLECT.Check_Link; end');
+Exec ('begin DISP.PCK_SSMTM_COLLECT.Check_Link; commit; end;') AT CDB10 
+while @number<28
+	begin
+	declare @UnitCode int =(select [MachinesStates].[dbo].[Delay].[UnitCode] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number);
+	declare @StartDelay datetime =(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number);
+	declare @StopDelay datetime =(select [MachinesStates].[dbo].[Delay].[StopDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number);
+	declare @IDDelay int =(select [MachinesStates].[dbo].[Delay].[IDDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number);
+	if(
+		(select [MachinesStates].[dbo].[Delay].[StatusDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)=0 and --первое условие
+		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)!=NULL --второе условие
+		) Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_INS('+@UnitCode+','+@StartDelay+',NULL,NULL,NULL,NULL,'+@IDDelay+','+@StopDelay+'); commit; end;') AT CDB10 
+	else
+	if(
+		(select [MachinesStates].[dbo].[Delay].[StatusDelay] from [MachinesStates].[dbo].[Delay] where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)=1 and --первое условие
+		(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay]  where [MachinesStates].[dbo].[Delay].[IDDelay]=@number)!=NULL --второе условие
+		) Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_INS('+@UnitCode+','+@IDDelay+',NULL,NULL,NULL,'+@StopDelay+'); commit; end;') AT CDB10
+	set @number=@number+1;
+	end; 
 
-SELECT * FROM OPENQUERY(CDB10,'begin exec PCK_SSMTM_COLLECT.Check_Link; end');
+/*if(
+(select [MachinesStates].[dbo].[Delay].[StatusDelay] from [MachinesStates].[dbo].[Delay])=0 and --первое условие
+(select [MachinesStates].[dbo].[Delay].[StartDelay] from [MachinesStates].[dbo].[Delay])!=NULL --второе условиеусловие
+ )   
+ Exec ('begin DISP.PCK_SSMTM_COLLECT.STOP_INS('+[MachinesStates].[dbo].[Delay].[UnitCode]+',[MachinesStates].[dbo].[Delay].[StartDelay],NULL,NULL,NULL,NULL,[MachinesStates].[dbo].[Delay].[IDDelay],[MachinesStates].[dbo].[Delay].[StopDelay]); commit; end;') AT CDB10 
+
 SELECT
 CASE
 WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=0) THEN (select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.STOP_INS([MachinesStates].[dbo].[Delay].[UnitCode],[MachinesStates].[dbo].[Delay].[StartDelay],NULL,NULL,NULL,NULL,[MachinesStates].[dbo].[Delay].[IDDelay],[MachinesStates].[dbo].[Delay].[StopDelay]); end'))
@@ -21,13 +46,14 @@ WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL and [MachinesStates].[db
 --WHEN ([MachinesStates].[dbo].[Delay].[StopDelay]!=NULL and [MachinesStates].[dbo].[Delay].[StatusDelay]=1) THEN  (select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.STOP_UPD(); end'))--параметры
 END
 FROM [MachinesStates].[dbo].[Delay];
+ */
 
 UPDATE [MachinesStates].[dbo].[Delay]
 SET [MachinesStates].[dbo].[Delay].[StatusDelay]=
 CASE
 WHEN ([MachinesStates].[dbo].[Delay].[StartDelay]!=NULL) THEN 1 ELSE 0
 END
---select * from openquery(CDB10,'begin exec DISP.PCK_SSMTM_COLLECT.Check_Link; end');
+
 
 END;
 
