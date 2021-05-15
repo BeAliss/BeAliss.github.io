@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "//alias/static/css/main.51e64f0d.chunk.css",
-    "main.js": "//alias/static/js/main.9604bda6.chunk.js",
-    "main.js.map": "//alias/static/js/main.9604bda6.chunk.js.map",
-    "runtime-main.js": "//alias/static/js/runtime-main.56606a55.js",
-    "runtime-main.js.map": "//alias/static/js/runtime-main.56606a55.js.map",
-    "static/css/2.42e732a9.chunk.css": "//alias/static/css/2.42e732a9.chunk.css",
-    "static/js/2.8d7bb5ee.chunk.js": "//alias/static/js/2.8d7bb5ee.chunk.js",
-    "static/js/2.8d7bb5ee.chunk.js.map": "//alias/static/js/2.8d7bb5ee.chunk.js.map",
-    "static/js/3.061350c2.chunk.js": "//alias/static/js/3.061350c2.chunk.js",
-    "static/js/3.061350c2.chunk.js.map": "//alias/static/js/3.061350c2.chunk.js.map",
-    "index.html": "//alias/index.html",
-    "static/css/2.42e732a9.chunk.css.map": "//alias/static/css/2.42e732a9.chunk.css.map",
-    "static/css/main.51e64f0d.chunk.css.map": "//alias/static/css/main.51e64f0d.chunk.css.map",
-    "static/js/2.8d7bb5ee.chunk.js.LICENSE.txt": "//alias/static/js/2.8d7bb5ee.chunk.js.LICENSE.txt",
-    "static/media/index.css": "//alias/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
+    "main.css": "/alias/static/css/main.51e64f0d.chunk.css",
+    "main.js": "/alias/static/js/main.dfb4b4bc.chunk.js",
+    "main.js.map": "/alias/static/js/main.dfb4b4bc.chunk.js.map",
+    "runtime-main.js": "/alias/static/js/runtime-main.4178f592.js",
+    "runtime-main.js.map": "/alias/static/js/runtime-main.4178f592.js.map",
+    "static/css/2.406c792a.chunk.css": "/alias/static/css/2.406c792a.chunk.css",
+    "static/js/2.8d7bb5ee.chunk.js": "/alias/static/js/2.8d7bb5ee.chunk.js",
+    "static/js/2.8d7bb5ee.chunk.js.map": "/alias/static/js/2.8d7bb5ee.chunk.js.map",
+    "static/js/3.061350c2.chunk.js": "/alias/static/js/3.061350c2.chunk.js",
+    "static/js/3.061350c2.chunk.js.map": "/alias/static/js/3.061350c2.chunk.js.map",
+    "index.html": "/alias/index.html",
+    "static/css/2.406c792a.chunk.css.map": "/alias/static/css/2.406c792a.chunk.css.map",
+    "static/css/main.51e64f0d.chunk.css.map": "/alias/static/css/main.51e64f0d.chunk.css.map",
+    "static/js/2.8d7bb5ee.chunk.js.LICENSE.txt": "/alias/static/js/2.8d7bb5ee.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/alias/static/media/roboto-vietnamese-400-normal.52cebac0.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.56606a55.js",
-    "static/css/2.42e732a9.chunk.css",
+    "static/js/runtime-main.4178f592.js",
+    "static/css/2.406c792a.chunk.css",
     "static/js/2.8d7bb5ee.chunk.js",
     "static/css/main.51e64f0d.chunk.css",
-    "static/js/main.9604bda6.chunk.js"
+    "static/js/main.dfb4b4bc.chunk.js"
   ]
 }
